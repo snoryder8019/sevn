@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <%- include('config/head.ejs')%>
+    <%- include('config/header.ejs')%>
+    <h1><%=title%></h1>
+  <form action="/loginUser" method="post">
+      <input type="text" name="email" >
+      <input type="text" email="password">
+
+
+      <button type="submit">login</button>
+  </form>
+  
+
+ <%- include('config/footer.ejs')%>
+</html>

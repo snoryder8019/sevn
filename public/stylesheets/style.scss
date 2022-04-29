@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: aqua;
+}
+h1{
+  color:red
+}
+a {
+  color: #00B7FF;
+}
+
+.validateError{
+
+  color:red;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+  transform-style:preserve-3d ;
+  transform: translateY(-15px);
+}

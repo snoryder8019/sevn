@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <%- include('config/head.ejs')%>
+    <%- include('config/header.ejs')%>
+    <h1><%=title%></h1>
+  <form action="/blogPost" method="post">
+      <input type="text" name="blogTitle" >
+      <input type="text" name="subTitle">
+
+      <input type="text" name="body">
+     
+
+      <button type="submit">post blog</button>
+  </form>
+  
+
+ <%- include('config/footer.ejs')%>
+</html>

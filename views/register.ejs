@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<body onload="validate()">
+<html>
+    <%- include('config/head.ejs')%>
+    <%- include('config/header.ejs')%>
+    <h1><%=title%></h1>
+  <form action="/registerUser" method="POST">
+      <input id="regName" type="text" name="fname" placeholder="Your Name" pattern=".{3,}" title="three or more charachters" >
+      <input id="regEmail" type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="valid email characters not recognized">
+
+      <input id="regPass" type="password" name="password" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"">
+      <br>
+      <h4>opt in</h4>
+      <input id="regBox" type="checkbox" name="agree"><br>
+      <h3 class="validateError" id="regValidateError">*please fill out all fields and "Opt In" to register</h3><br>
+      <button disabled id="regSubmit" type="submit">register</button>
+
+<script src="javascripts/validate.js"></script>
+ <%- include('config/footer.ejs')%>
+</html>
+</body>
