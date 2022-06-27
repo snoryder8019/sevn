@@ -1,6 +1,6 @@
 {
-  "name": "sevn",
-  "version": "0.0.0",
+  "name": "Southern Oklahoma Pride",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
