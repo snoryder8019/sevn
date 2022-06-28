@@ -1,7 +1,26 @@
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: aqua;
+  background-color:white;
+}
+#bkgdCanvas{
+z-index: -1;
+  position: fixed;
+  background-color:rgba(0,0,0,0);
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+min-height: 100vh;
+min-width: 100vw;
+}
+#backgroundFX{
+ margin: 0;
+ padding: 0;
+ min-width: 100vw;
+ min-height: 100vh;
+ background-image: src('./images/oklaImg.png');
+ clip-path: ;
 }
 h1{
   color:red
@@ -17,4 +36,12 @@ a {
   transition-timing-function: ease-in-out;
   transform-style:preserve-3d ;
   transform: translateY(-15px);
+}
+.menu{
+
+  display: flex;
+  
+  p{
+    margin:2%;
+  }
 }

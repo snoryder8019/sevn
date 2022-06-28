@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <body onload="validate()">
 <html>
+  <body>
+    <canvas id="bkgdCanvas"></canvas>  
+    <div id="backgroundFX">
+
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
     <h1><%=title%></h1>
@@ -10,12 +14,16 @@
 
       <input id="regPass" type="password" name="password" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"">
       <br>
-      <h4>opt in</h4>
+      <h4>Opt in to receive email messages Southern Oklahoma Pride</h4>
+      
       <input id="regBox" type="checkbox" name="agree"><br>
       <h3 class="validateError" id="regValidateError">*please fill out all fields and "Opt In" to register</h3><br>
       <button disabled id="regSubmit" type="submit">register</button>
 
 <script src="javascripts/validate.js"></script>
  <%- include('config/footer.ejs')%>
-</html>
+ </div>
+
+<script src="javascripts/backgroundFX.js"></script>
 </body>
+</html>

@@ -7,7 +7,7 @@ const alert = require('alert')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Home' });
 });
 router.get('/register', function(req, res, next) {
   res.render('register', { title: 'register' });
