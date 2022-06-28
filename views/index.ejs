@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <body>
+   
     <canvas id="bkgdCanvas"></canvas>  
 <div id="backgroundFX">
-
+  
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
+    <div class="mainStyle">
+
+     <div class="landingPage">   
+        <div class="leftGrid">
     <h1>Southern Oklahoma Pride Events</h1>
     <h2><%= title%></h2>
     <h2>Main Home Page</h2>
@@ -13,8 +18,13 @@
  <ul> 
      <li>List Item #1</li>
  </ul>
+</div>
+<div class="rightGrid">
+    image
+</div>
+</div>
  <%- include('config/footer.ejs')%>
-
+</div>
 </div>
 <script src="javascripts/backgroundFX1.js"></script>
 </body>
