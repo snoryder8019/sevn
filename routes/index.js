@@ -52,7 +52,7 @@ router.post('/registerUser', (req,res) => {
   main().catch(console.error);
 ///
 async function checkEmail(client){
-  const emailCheck = await client.db('users').collection('registry').findOne({email:req.body.email});
+  const emailCheck = await client.db('sookp').collection('registry').findOne({email:req.body.email});
 if(emailCheck.email===req.body.email){
   
   
