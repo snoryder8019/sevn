@@ -5,6 +5,21 @@ body {
   background-color: white;
 }
 
+#menu {
+  font-weight: 950;
+}
+#menu a {
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  bottom: 2%;
+  z-index: 5;
+  color: rgba(201, 235, 31, 0.733);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
 #bkgdCanvas {
   z-index: -1;
   position: fixed;
@@ -21,15 +36,15 @@ body {
   padding: 0;
   min-width: 100vw;
   min-height: 100vh;
-  background-image: src("./images/oklaImg.png");
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.674), rgba(201, 235, 31, 0.733), rgba(30, 255, 0, 0.57), rgba(0, 183, 255, 0.857));
 }
 
 h1 {
-  color: red;
+  color: rgba(0, 183, 255, 0.857);
 }
 
 a {
-  color: #00B7FF;
+  color: rgba(0, 183, 255, 0.857);
 }
 
 .validateError {
@@ -45,6 +60,23 @@ a {
 }
 .menu p {
   margin: 2%;
+}
+
+@keyframes slidein() {
+  0% {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.mainStyle {
+  background-color: white;
+  margin: 2%;
+  padding: 1%;
+  animation: 1.2s ease-in 1s 1 slidein;
 }
 
 /*# sourceMappingURL=style.css.map */

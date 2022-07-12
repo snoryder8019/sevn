@@ -7,6 +7,7 @@
 
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
+    <div class="mainStyle">
     <h1><%=title%></h1>
   <form action="/registerUser" method="POST">
       <input id="regName" type="text" name="fname" placeholder="Your Name" pattern=".{3,}" title="three or more charachters" >
@@ -19,11 +20,11 @@
       <input id="regBox" type="checkbox" name="agree"><br>
       <h3 class="validateError" id="regValidateError">*please fill out all fields and "Opt In" to register</h3><br>
       <button disabled id="regSubmit" type="submit">register</button>
-
-<script src="javascripts/validate.js"></script>
+</form>
+  </div>
  <%- include('config/footer.ejs')%>
  </div>
-
-<script src="javascripts/backgroundFX.js"></script>
+ <script src="javascripts/validate.js"></script>
+<script src="javascripts/backgroundFX1.js"></script>
 </body>
 </html>

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
+    <body>
+           
+    <canvas id="bkgdCanvas"></canvas>  
+    <div id="backgroundFX">
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
+    <div class="mainStyle">
     <h1><%=title%></h1>
   <form action="/blogPost" method="post">
       <input type="text" name="blogTitle" >
@@ -12,7 +17,9 @@
 
       <button type="submit">post blog</button>
   </form>
-  
+    </div>
 
  <%- include('config/footer.ejs')%>
-</html>
+ <script src="javascripts/backgroundFX1.js"></script>
+    </div>
+    </body> </html>

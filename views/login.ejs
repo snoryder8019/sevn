@@ -5,18 +5,22 @@
         <div id="backgroundFX">
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
-    <h1><%=title%></h1>
-  <form action="/loginUser" method="post">
+    <div class="mainStyle">
+    <h1><%= title%></h1>
+  <form action="/loginU" method="post">
       <input type="text" name="email" >
       <input type="text" email="password">
 
 
       <button type="submit">login</button>
-  </form>
+      </form>
+  </div>
+     
+  
   
 
  <%- include('config/footer.ejs')%>
         </div>
-        <script src="javascripts/backgroundFX.js"></script>
+        <script src="javascripts/backgroundFX1.js"></script>
 </body>
 </html>

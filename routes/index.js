@@ -3,24 +3,22 @@ var router = express.Router();
 const { MongoClient} = require('mongodb');
 var client = require('../config/mongo');
 const alert = require('alert')
-
-
+const app = express();
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
+  res.render('index', { title: 'Homie Dont Play dat on the Homescreen' });
 });
 router.get('/register', function(req, res, next) {
   res.render('register', { title: 'register' });
-
 });
 router.get('/login', function(req, res, next) {
 res.render('login', { title: 'login' });
-
 });
-
-
 router.get('/admin',function(req,res,next){
   res.render('admin',{title: 'admin'})
+<<<<<<< HEAD
+ })
+=======
  
 })
 router.post('/registerUser', (req,res) => {
@@ -52,7 +50,7 @@ router.post('/registerUser', (req,res) => {
   main().catch(console.error);
 ///
 async function checkEmail(client){
-  const emailCheck = await client.db('users').collection('registry').findOne({email:req.body.email});
+  const emailCheck = await client.db('sookp').collection('registry').findOne({email:req.body.email});
 if(emailCheck.email===req.body.email){
   
   
@@ -77,6 +75,6 @@ if(emailCheck.email===req.body.email){
 
 
 
+>>>>>>> a4d383d55955c78839627121a4704b04965f5d39
 
-})
 module.exports = router;
