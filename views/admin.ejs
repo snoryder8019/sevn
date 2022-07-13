@@ -8,17 +8,21 @@
     <%- include('config/header.ejs')%>
     <div class="mainStyle">
     <h1><%=title%></h1>
-  <form action="/blogPost" method="post">
+  <!--form action="/blogPost" method="post">
       <input type="text" name="blogTitle" >
       <input type="text" name="subTitle">
-
       <input type="text" name="body">
-     
-
       <button type="submit">post blog</button>
-  </form>
-    </div>
+  </form-->
 
+  <% for(var i=0; i<data.length;i++){%>
+    <li><%= data[i] %></li>
+    <% } %>
+    
+    <% for(var i=0; i<email.length;i++){%>
+      <li><%= email[i] %></li>
+      <% } %>
+    </div>
  <%- include('config/footer.ejs')%>
  <script src="javascripts/backgroundFX1.js"></script>
     </div>
