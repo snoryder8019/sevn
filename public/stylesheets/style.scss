@@ -47,7 +47,10 @@ h1{
 a {
   color: $blue;
 }
-
+li{
+  color:black;
+  font-size: 12px;
+}
 .validateError{
 
   color:$error;

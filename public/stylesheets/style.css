@@ -47,6 +47,11 @@ a {
   color: rgba(0, 183, 255, 0.857);
 }
 
+li {
+  color: black;
+  font-size: 12px;
+}
+
 .validateError {
   color: red;
   transition-duration: 0.2s;

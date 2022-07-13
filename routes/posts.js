@@ -9,7 +9,6 @@ router.use((req,res,next)=>{
   console.log('unused middleware slot')
   next();
 })
-
 router.get('/', (req,res) =>{
   res.send
 })
@@ -38,12 +37,14 @@ login().catch(console.error);
 
 async function checkEmail(client){
   console.log('checking email');
-  const emailCheck = await client.db(dbName).collection('registry').findOne({email:req.body.email});
-  if(emailCheck.email===req.body.email){
+  const emailCheck = await client.db(dbName).collection('registry').findOne({email:req.body.email, pass:req.body.password});
+  if(emailCheck.email===req.body.email && emailCheck.pass===req.body.pass){
    console.log(emailCheck.email+ " email validated");
    res.render('admin', {title:'logging IN!! ~ Welcome to Admin Page'})
 }else{
   console.log('tayken')}
+  res.render('login', {title:'hmm Something is not Straight here. \nTry again'})
+  client.close();
 }
 
 }
@@ -59,6 +60,7 @@ router.post('/registerUser', (req,res) => {
    // await checkEmail(client);
  
     await createUser(client,{
+      type:"registry",
       name: req.body.fname,
       email: req.body.email,
       password : req.body.password
@@ -90,7 +92,7 @@ if(emailCheck.email===req.body.email){
             }else{
    const result = await client.db(dbName).collection("registry").insertOne(newUser);
    console.log(' :new user\n id: '+result.insertedId+'\n email: '+ req.body.email+'\nIP:'+ipHit );
-   res.render('login',{title:'thanks for registering'})}
+   res.render('index',{title:'thanks for registering! redirected Home.'})}
    }
 })
 
