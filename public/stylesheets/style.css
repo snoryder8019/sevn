@@ -1,8 +1,434 @@
+@media screen and (max-width:768px) {
+  a {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 2em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .pricing {
+    font-size: 2em;
+  }
+}
+@media screen and (min-width:769px) and (max-width:1000px) {
+  li {
+    font-size: 2.6em;
+  }
+
+  a {
+    font-size: 1.1em;
+  }
+
+  p {
+    font-size: 2.7em;
+  }
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+}
+@media screen and (min-width:1001px) and (max-width:1680px) {
+  li {
+    font-size: 1.6em;
+  }
+
+  a {
+    font-size: 1.6em;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  .pricing {
+    font-size: 1em;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+@media screen and (min-width:1681px) {
+  a {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  .pricing {
+    font-size: 3em;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
 body {
   margin: 0;
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: white;
+}
+
+h1 {
+  color: rgba(0, 183, 255, 0.857);
+}
+h1 a {
+  font-size: 1em;
+}
+h1 p {
+  font-size: 2em;
+}
+h1 h1 {
+  font-size: 2em;
+}
+h1 h2 {
+  font-size: 1.5em;
+}
+h1 .pricing {
+  font-size: 2em;
+}
+h1 li {
+  font-size: 2.6em;
+}
+h1 a {
+  font-size: 1.1em;
+}
+h1 p {
+  font-size: 2.7em;
+}
+h1 h1 {
+  font-size: 3.5em;
+}
+h1 h2 {
+  font-size: 2.5em;
+}
+h1 li {
+  font-size: 1.6em;
+}
+h1 a {
+  font-size: 1.6em;
+}
+h1 p {
+  font-size: 1.3em;
+}
+h1 h1 {
+  font-size: 3.5em;
+}
+h1 h2 {
+  font-size: 1.8em;
+}
+h1 .pricing {
+  font-size: 1em;
+}
+h1 a {
+  font-size: 1.5em;
+}
+h1 p {
+  font-size: 1.5em;
+}
+h1 h1 {
+  font-size: 2em;
+}
+h1 h2 {
+  font-size: 2em;
+}
+h1 .pricing {
+  font-size: 3em;
+}
+
+h2 a {
+  font-size: 1em;
+}
+h2 p {
+  font-size: 2em;
+}
+h2 h1 {
+  font-size: 2em;
+}
+h2 h2 {
+  font-size: 1.5em;
+}
+h2 .pricing {
+  font-size: 2em;
+}
+h2 li {
+  font-size: 2.6em;
+}
+h2 a {
+  font-size: 1.1em;
+}
+h2 p {
+  font-size: 2.7em;
+}
+h2 h1 {
+  font-size: 3.5em;
+}
+h2 h2 {
+  font-size: 2.5em;
+}
+h2 li {
+  font-size: 1.6em;
+}
+h2 a {
+  font-size: 1.6em;
+}
+h2 p {
+  font-size: 1.3em;
+}
+h2 h1 {
+  font-size: 3.5em;
+}
+h2 h2 {
+  font-size: 1.8em;
+}
+h2 .pricing {
+  font-size: 1em;
+}
+h2 a {
+  font-size: 1.5em;
+}
+h2 p {
+  font-size: 1.5em;
+}
+h2 h1 {
+  font-size: 2em;
+}
+h2 h2 {
+  font-size: 2em;
+}
+h2 .pricing {
+  font-size: 3em;
+}
+
+p {
+  margin: 2%;
+  padding: 1%;
+}
+p a {
+  font-size: 1em;
+}
+p p {
+  font-size: 2em;
+}
+p h1 {
+  font-size: 2em;
+}
+p h2 {
+  font-size: 1.5em;
+}
+p .pricing {
+  font-size: 2em;
+}
+p li {
+  font-size: 2.6em;
+}
+p a {
+  font-size: 1.1em;
+}
+p p {
+  font-size: 2.7em;
+}
+p h1 {
+  font-size: 3.5em;
+}
+p h2 {
+  font-size: 2.5em;
+}
+p li {
+  font-size: 1.6em;
+}
+p a {
+  font-size: 1.6em;
+}
+p p {
+  font-size: 1.3em;
+}
+p h1 {
+  font-size: 3.5em;
+}
+p h2 {
+  font-size: 1.8em;
+}
+p .pricing {
+  font-size: 1em;
+}
+p a {
+  font-size: 1.5em;
+}
+p p {
+  font-size: 1.5em;
+}
+p h1 {
+  font-size: 2em;
+}
+p h2 {
+  font-size: 2em;
+}
+p .pricing {
+  font-size: 3em;
+}
+
+a {
+  color: rgba(0, 183, 255, 0.857);
+}
+a a {
+  font-size: 1em;
+}
+a p {
+  font-size: 2em;
+}
+a h1 {
+  font-size: 2em;
+}
+a h2 {
+  font-size: 1.5em;
+}
+a .pricing {
+  font-size: 2em;
+}
+a li {
+  font-size: 2.6em;
+}
+a a {
+  font-size: 1.1em;
+}
+a p {
+  font-size: 2.7em;
+}
+a h1 {
+  font-size: 3.5em;
+}
+a h2 {
+  font-size: 2.5em;
+}
+a li {
+  font-size: 1.6em;
+}
+a a {
+  font-size: 1.6em;
+}
+a p {
+  font-size: 1.3em;
+}
+a h1 {
+  font-size: 3.5em;
+}
+a h2 {
+  font-size: 1.8em;
+}
+a .pricing {
+  font-size: 1em;
+}
+a a {
+  font-size: 1.5em;
+}
+a p {
+  font-size: 1.5em;
+}
+a h1 {
+  font-size: 2em;
+}
+a h2 {
+  font-size: 2em;
+}
+a .pricing {
+  font-size: 3em;
+}
+
+li a {
+  font-size: 1em;
+}
+li p {
+  font-size: 2em;
+}
+li h1 {
+  font-size: 2em;
+}
+li h2 {
+  font-size: 1.5em;
+}
+li .pricing {
+  font-size: 2em;
+}
+li li {
+  font-size: 2.6em;
+}
+li a {
+  font-size: 1.1em;
+}
+li p {
+  font-size: 2.7em;
+}
+li h1 {
+  font-size: 3.5em;
+}
+li h2 {
+  font-size: 2.5em;
+}
+li li {
+  font-size: 1.6em;
+}
+li a {
+  font-size: 1.6em;
+}
+li p {
+  font-size: 1.3em;
+}
+li h1 {
+  font-size: 3.5em;
+}
+li h2 {
+  font-size: 1.8em;
+}
+li .pricing {
+  font-size: 1em;
+}
+li a {
+  font-size: 1.5em;
+}
+li p {
+  font-size: 1.5em;
+}
+li h1 {
+  font-size: 2em;
+}
+li h2 {
+  font-size: 2em;
+}
+li .pricing {
+  font-size: 3em;
 }
 
 #menu {
@@ -13,11 +439,15 @@ body {
 }
 
 .footer {
-  position: fixed;
-  bottom: 2%;
   z-index: 5;
   color: rgba(201, 235, 31, 0.733);
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.footer p {
+  font-size: 1.2rem;
+}
+.footer a {
+  font-size: 1.2rem;
 }
 
 #bkgdCanvas {
@@ -39,17 +469,47 @@ body {
   background: linear-gradient(to right, rgba(255, 0, 0, 0.674), rgba(201, 235, 31, 0.733), rgba(30, 255, 0, 0.57), rgba(0, 183, 255, 0.857));
 }
 
-h1 {
-  color: rgba(0, 183, 255, 0.857);
+.okImg {
+  position: fixed;
+  z-index: -1;
+  transform: rotate(90deg) translateY(20%);
+  width: 200%;
+  filter: opacity(0.3);
+}
+@media screen and (min-width: 1000px) {
+  .okImg {
+    transform: rotate(0deg) translateY(0);
+    width: 100%;
+  }
 }
 
-a {
-  color: rgba(0, 183, 255, 0.857);
+button {
+  margin-left: 15%;
+  min-width: 60%;
+}
+button h2 {
+  font-size: 3em;
 }
 
-li {
+input {
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  min-width: 96%;
+  min-height: 65px;
+  margin: 2px;
+  padding: 0;
+  font-size: 3rem;
   color: black;
-  font-size: 12px;
+  font-weight: 800;
+  background-color: rgba(0, 183, 255, 0.857);
+}
+
+input[type=checkbox]::before {
+  border: 3px solid black;
+}
+
+input:focus {
+  border: 3px solid rgba(255, 15, 15, 0.9);
+  background-color: rgba(235, 178, 173, 0.733);
 }
 
 .validateError {
@@ -60,11 +520,15 @@ li {
   transform: translateY(-15px);
 }
 
+.mainStyle {
+  background-color: white;
+  margin: 2%;
+  padding: 1%;
+  animation: 1.2s ease-in 1s 1 slidein;
+}
+
 .menu {
   display: flex;
-}
-.menu p {
-  margin: 2%;
 }
 
 @keyframes slidein() {
@@ -76,12 +540,6 @@ li {
     opacity: 1;
     transform: translateX(0px);
   }
-}
-.mainStyle {
-  background-color: white;
-  margin: 2%;
-  padding: 1%;
-  animation: 1.2s ease-in 1s 1 slidein;
 }
 
 /*# sourceMappingURL=style.css.map */

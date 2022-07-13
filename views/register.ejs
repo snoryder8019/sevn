@@ -10,18 +10,18 @@
     <div class="mainStyle">
     <h1><%=title%></h1>
   <form action="/registerUser" method="POST">
-    <br><h3>name</h3>
+    <br><h2>name</h2>
       <input id="regName" type="text" name="fname"  pattern=".{3,}" title="three or more charachters" >
-      <br><h3>email</h3>
+      <br><h2>email</h2>
       <input id="regEmail" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="valid email characters not recognized">
-      <br><h3>select a really really good password</h3>
+      <br><h2>select a really really good password</h2>
       <input id="regPass" type="password" name="password"   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"">
       <br>
-      <h4>Opt in to receive email messages Southern Oklahoma Pride</h4>
+      <h2>Opt in to receive email messages Southern Oklahoma Pride</h2>
       
       <input id="regBox" type="checkbox" name="agree"><br>
-      <h3 class="validateError" id="regValidateError">*please fill out all fields and "Opt In" to register</h3><br>
-      <button disabled id="regSubmit" type="submit">register</button>
+      <h2 class="validateError" id="regValidateError">*please fill out all fields and "Opt In" to register</h2><br>
+      <button disabled id="regSubmit" type="submit"><h2>register</h2></button>
 </form>
   </div>
  <%- include('config/footer.ejs')%>
