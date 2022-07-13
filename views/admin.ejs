@@ -14,15 +14,29 @@
       <input type="text" name="body">
       <button type="submit">post blog</button>
   </form-->
+    <h1>Registered Visitors</h1>
+<table>
+      <thead>
+     <th>name</th>
+      <th>email</th>
+       </thead>
+<tbody>
+      <% for(var i=0; i<email.length;i++){%>
+    <tr>
+    <td>
+    <%= email[i].name %> 
+  </td>
+  <td>
+    <%= email[i].email %>  
+  </td>
+  <td style="border:none;"><button>delete</button></td>
+</tr>
+   <% } %>
 
-  <% for(var i=0; i<data.length;i++){%>
-    <li><%= data[i] %></li>
-    <% } %>
-    
-    <% for(var i=0; i<email.length;i++){%>
-      <li><%= email[i] %></li>
-      <% } %>
-    </div>
+  
+</tbody>
+</table>
+        </div>
  <%- include('config/footer.ejs')%>
  <script src="javascripts/backgroundFX1.js"></script>
     </div>

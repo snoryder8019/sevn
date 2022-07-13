@@ -37,7 +37,7 @@ async function getEmails(client){
   const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
   const emailStr = await client.db(dbName).collection('registry').find().toArray();
   const data = [JSON.stringify(dataStr)];
-  const email = [JSON.stringify(emailStr.email)];
+  const email = emailStr;
    console.log(" getting data from sook registry"+ "\nlist: "+email);
    res.render('admin', {title:' Welcome to Admin Page', data:data, email:email})
   client.close();

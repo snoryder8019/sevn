@@ -484,10 +484,14 @@ li .pricing {
 }
 
 button {
+  margin: 0px 3px;
+}
+
+form button {
   margin-left: 15%;
   min-width: 60%;
 }
-button h2 {
+form h2 {
   font-size: 3em;
 }
 
@@ -520,11 +524,17 @@ input:focus {
   transform: translateY(-15px);
 }
 
+button.trash {
+  max-width: 20px;
+  max-height: 20px;
+}
+
 .mainStyle {
   background-color: white;
   margin: 2%;
   padding: 1%;
   animation: 1.2s ease-in 1s 1 slidein;
+  overflow: scroll;
 }
 
 .menu {
@@ -540,6 +550,19 @@ input:focus {
     opacity: 1;
     transform: translateX(0px);
   }
+}
+table {
+  width: 100%;
+  max-height: 50%;
+  overflow-y: scroll;
+}
+
+td {
+  border: 1px dotted black;
+}
+
+th {
+  text-align: left;
 }
 
 /*# sourceMappingURL=style.css.map */
