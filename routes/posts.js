@@ -1,14 +1,21 @@
 var express = require('express');
 var router = express.Router();
+const app = express();
 const { MongoClient} = require('mongodb');
 var client = require('../config/mongo');
 const alert = require('alert')
 const dbName= 'sookp'
+const multer = require('multer');
+const upload = multer({dest:'tmp/uploads'});
+const path = require('path');
+const fs = require('fs')
+
 //middleware
 router.use((req,res,next)=>{
-  console.log('unused middleware slot')
   next();
-})
+  
+//fs to read photo file length
+ })
 router.get('/', (req,res) =>{
   res.send
 })
@@ -43,7 +50,7 @@ async function checkEmail(client){
    res.render('admin', {title:'logging IN!! ~ Welcome to Admin Page'})
 }else{
   console.log('tayken')}
-  res.render('login', {title:'hmm Something is not Straight here. \nTry again'})
+  res.render('login', {title:'hmm Something\'s is not Straight here. Try again'})
   client.close();
 }
 
@@ -96,6 +103,20 @@ if(emailCheck.email===req.body.email){
    }
 })
 
+//multer trial
+// router.post( '/upload',upload.single('photo'), (req,res, next)=>{
+// //
+// fs.readdir('./public/images/uploads', 'utf-8',(err,data)=>{
+//   if (err){
+//   console.log(err);
+//   }
+// const fileCount = data.length
+//  })
+// const ext = req.file.originalname.split(".")[1];
+// const newFile = "uploadImage"+fileCount+"."+ext;
+// console.log(newFile);
+//   }
+// );
 
 
   module.exports = router;

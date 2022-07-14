@@ -14,6 +14,9 @@ router.get('/register', function(req, res, next) {
 router.get('/login', function(req, res, next) {
 res.render('login', { title: 'login' });
 });
+router.get('/404', function(req, res, next) {
+res.render('404', { title: 'Daaaaang its a 404' });
+});
 
 
 module.exports = router;

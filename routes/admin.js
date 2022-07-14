@@ -3,8 +3,9 @@ var router = express.Router();
 const { MongoClient} = require('mongodb');
 var client = require('../config/mongo');
 const alert = require('alert');
-const { json } = require('express');
-const dbName= 'sookp'
+const { json, application } = require('express');
+const dbName= 'sookp';
+
 //middleware
 router.use((req,res,next)=>{
   console.log('unused admin middleware slot')
@@ -44,5 +45,11 @@ async function getEmails(client){
     }
   }
 )
+
+
+
+
+
+
 
   module.exports = router;

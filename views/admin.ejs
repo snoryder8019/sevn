@@ -6,6 +6,7 @@
     <div id="backgroundFX">
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
+    <%- include('config/bkgdImg.ejs')%>
     <div class="mainStyle">
     <h1><%=title%></h1>
   <!--form action="/blogPost" method="post">
@@ -38,6 +39,20 @@
 </table>
         </div>
  <%- include('config/footer.ejs')%>
- <script src="javascripts/backgroundFX1.js"></script>
+ <!--script src="javascripts/backgroundFX1.js"></script-->
+<div class="mainStyle">
+
+<form action="/upload"method="post" enctype="multipart/form-data">
+  <input type="file" accept="image/*" name="photo">
+  <input type="submit" >
+  <h2></h2>
+  <input type="text">
+</form>
+
+
+
+
+</div>
+ 
     </div>
     </body> </html>

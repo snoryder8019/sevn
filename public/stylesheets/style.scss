@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color:white;
+  //background-color:white;
 }
 h1{
   color:$blue;
@@ -73,16 +73,15 @@ min-width: 100vw;
 background:linear-gradient(to right,$red,$yellow, $green,$blue);
 }
 //background Img Style
-.okImg{
+img.okImg{
   position:fixed;
   z-index: -1;
-  transform: rotate(90deg) translateY(20%);
-  width: 200%;
+  margin-top: 50%;
+  transform: rotate(0) translateY(-50%);
+  width: 100%;
   filter: opacity(.3);
-  @media  screen and (min-width:1000px) {
-    transform: rotate(0deg) translateY(0);
-    width: 100%;
-  }
+  transform-style: preserve-3d;
+@include media.bkgdImg();
 }
 //button styles
 button{
@@ -134,17 +133,26 @@ button.trash{
 }
 //main content boxing style
 .mainStyle{
-  background-color: white;
+  //background-color: white;
   margin: 2%;
   padding: 1%;
  // transform-style: preserve-3d;
   //transition-duration: 1.2s;
   //transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   animation: 1.2s ease-in 1s 1 slidein;
-  overflow: scroll;
 
 }
-
+img.mainImg{
+  width:100%;
+  padding: 0%;
+  margin: 0%;
+}
+.imgBox{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  @include media.mainImg;
+}
 //MENU STYLES
 .menu{
   display: flex;
