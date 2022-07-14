@@ -3,8 +3,9 @@ var router = express.Router();
 const { MongoClient} = require('mongodb');
 var client = require('../config/mongo');
 const alert = require('alert');
-const { json } = require('express');
-const dbName= 'sookp'
+const { json, application } = require('express');
+const dbName= 'sookp';
+
 //middleware
 router.use((req,res,next)=>{
   console.log('unused admin middleware slot')
@@ -37,12 +38,18 @@ async function getEmails(client){
   const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
   const emailStr = await client.db(dbName).collection('registry').find().toArray();
   const data = [JSON.stringify(dataStr)];
-  const email = [JSON.stringify(emailStr.email)];
+  const email = emailStr;
    console.log(" getting data from sook registry"+ "\nlist: "+email);
    res.render('admin', {title:' Welcome to Admin Page', data:data, email:email})
   client.close();
     }
   }
 )
+
+
+
+
+
+
 
   module.exports = router;

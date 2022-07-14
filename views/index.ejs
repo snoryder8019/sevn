@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
+    <%- include('config/head.ejs')%>
 <body>
-   
+ 
     <canvas id="bkgdCanvas"></canvas>  
 <div id="backgroundFX">
-  
-    <%- include('config/head.ejs')%>
+ 
+   
     <%- include('config/header.ejs')%>
+    <%- include('config/bkgdImg.ejs')%>
     <div class="mainStyle">
 
      <div class="landingPage">   
-        <div class="leftGrid">
     <h1>Southern Oklahoma Pride Events</h1>
     <h2><%= title%></h2>
     <h2>Main Home Page</h2>
-  
- <ul> 
+   <ul> 
      <li>List Item #1</li>
  </ul>
+    <div class="imgBox"><img class="mainImg"src="images/knb.jpg" alt=""></div>
+
 </div>
-<div class="rightGrid">
-    image
+ 
 </div>
+<%- include('config/footer.ejs')%>
 </div>
- <%- include('config/footer.ejs')%>
-</div>
-</div>
-<script src="javascripts/backgroundFX1.js"></script>
+<!--script src="javascripts/backgroundFX1.js"></script-->
 </body>
  </html>
