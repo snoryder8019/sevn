@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <body>
+    <body onload="adminLoader()">
            
     <canvas id="bkgdCanvas"></canvas>  
     <div id="backgroundFX">
@@ -16,43 +16,51 @@
       <button type="submit">post blog</button>
   </form-->
     <h1>Registered Visitors</h1>
+ 
 <table>
-      <thead>
-     <th>name</th>
-      <th>email</th>
-       </thead>
-<tbody>
-      <% for(var i=0; i<email.length;i++){%>
-    <tr>
+    <thead>
+   <th>name</th>
+     <th>email</th>
+    </thead>
+  <tbody>
+        <% for(var i=0; i<email.length;i++){%>
+      <tr>
+      <td>
+      <%= email[i].name %> 
+    </td>
     <td>
-    <%= email[i].name %> 
-  </td>
-  <td>
-    <%= email[i].email %>  
-  </td>
-  <td style="border:none;"><button>delete</button></td>
-</tr>
-   <% } %>
-
+      <%= email[i].email %>  
+    </td>
+    <td style="border:none;">
+      <button id="delButt<%= [i]%>">Remove <%= email[i].name%></button>
+     <form method="post" action="/delRegister"><button class="delButton" id="delComfirm<%= [i]%>" name="delConfirm" value="<%= email[i].email%>">Confirm</button></form>
+      </td>
+  </tr>
+     <% } %>
   
-</tbody>
-</table>
+    
+  </tbody>
+  </table>
         </div>
- <%- include('config/footer.ejs')%>
+
  <!--script src="javascripts/backgroundFX1.js"></script-->
-<!--div class="mainStyle">
+<div class="mainStyle">
 
 <form action="/upload"method="post" enctype="multipart/form-data">
-  <input type="file" accept="image/*" name="photo">
-  <input type="submit" >
-  <h2></h2>
-  <input type="text">
-</form-->
+ <h2>Post Event</h2>
+
+  <input placeholder="Event Title"  type="text" name="title">
+ <input placeholder="Event Subtitle" type="text" name="subtitle">
+ <textarea placeholder="Event Details" type="text" name="details"></textarea>
+
+  <button type="submit" >Submit</button>
+</form>
 
 
 
-
+<%- include('config/footer.ejs')%> 
 </div>
- 
+
     </div>
+    <script src="javascripts/admin.js"></script>
     </body> </html>

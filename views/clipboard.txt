@@ -1,0 +1,35 @@
+ THIS IS AN IMAGE UPLOAD
+ 
+ <h2 style="margin: 0;">Attach Image to Event</h2> 
+ <input type="file" accept="image/*" name="photo">
+
+
+
+THIS IS AN EJS TABLE THAT LISTS REGISTERED USERS 
+
+<table>
+<select name="regSelect" id="">
+<% for(var i=0;i<regType.length;i++){%>
+  <option value="<%= email[i].regType%>"><%= email[i].regType%></option>
+  <%}%>
+  </select>
+  <thead>
+ <th>name</th>
+   <th>email</th>
+  </thead>
+<tbody>
+      <% for(var i=0; i<email.length;i++){%>
+    <tr>
+    <td>
+    <%= email[i].name %> 
+  </td>
+  <td>
+    <%= email[i].email %>  
+  </td>
+  <td style="border:none;"><button id="delButt<%= [i]%>">Remove <%= email[i].name%></button><button class="delButton" id="delComfirm<%= [i]%>">Confirm</button></td>
+</tr>
+   <% } %>
+
+  
+</tbody>
+</table>

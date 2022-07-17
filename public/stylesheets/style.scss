@@ -87,37 +87,44 @@ img.okImg{
 button{
   margin: 0px 3px;
 }
+//form and input button mixin
+@mixin formButton(){
+  button{
+    margin-left: 3%;
+     min-width:94%;
+     max-height:45%;
+    //min-height:65px;
+   }
+}
 form{
-button{
- margin-left: 15%;
-  min-width:60%;
- //min-height:65px;
-}
-h2{
-  font-size: 3em;
-}
-
-
+@include formButton();
 }
 //input boxes
 input{
-
+@include formButton();
   border: 1px solid rgba(0,0,0,.9);
  min-width: 96%;
- min-height: 65px;
+ max-height: 35px;
 margin: 2px;
 padding: 0;
-      font-size: 3rem;
-    color: black;font-weight: 800;
+       color: black;font-weight: 800;
     background-color: $blue;
 
 }
-input[type="checkbox"]::before{
-  border: 3px solid black;
+textarea{
+  background-color: $blue;
+  min-width:96%;
+  min-height: 60px;
+  margin: 1%;
+  padding:0;
 }
 input:focus{
   border:  3px solid rgba(255, 15, 15, 0.9);
   background-color: $pink;
+}
+
+.delButton{
+  display: none;
 }
 //form error styling
 .validateError{
@@ -146,6 +153,10 @@ img.mainImg{
   width:100%;
   padding: 0%;
   margin: 0%;
+}
+.eventBody{
+  border:1px solid black;
+  padding:2%;
 }
 .imgBox{
   margin: 0;

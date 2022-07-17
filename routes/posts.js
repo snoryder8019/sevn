@@ -5,15 +5,14 @@ const { MongoClient} = require('mongodb');
 var client = require('../config/mongo');
 const alert = require('alert')
 const dbName= 'sookp'
-const multer = require('multer');
-const upload = multer({dest:'tmp/uploads'});
-const path = require('path');
-const fs = require('fs')
+// const multer = require('multer');
+// const upload = multer({dest:'tmp/uploads'});
+// const path = require('path');
+// const fs = require('fs')
 
 //middleware
 router.use((req,res,next)=>{
   next();
-  
 //fs to read photo file length
  })
 router.get('/', (req,res) =>{
@@ -23,19 +22,16 @@ router.get('/', (req,res) =>{
 router.post('/loginU', (req,res) =>{
   /******LOGIN ANSYNC*** */
 async function login(){
-
   try {
     await client.connect();
    console.log('connected')
    await checkEmail(client);
-  
   }
   catch(err){
     console.log(err)
   }
   finally{
-  
-    await client.close();
+  await client.close();
   }
 }
 /***login ASYNC END** */
@@ -53,19 +49,14 @@ async function checkEmail(client){
   res.render('login', {title:'hmm Something\'s is not Straight here. Try again'})
   client.close();
 }
-
 }
-
 )
-
-
 router.post('/registerUser', (req,res) => {
   var ipHit = req.ip;
   async function main(){
    try {
     await client.connect();
    // await checkEmail(client);
- 
     await createUser(client,{
       type:"registry",
       name: req.body.fname,
@@ -84,8 +75,6 @@ router.post('/registerUser', (req,res) => {
 async function checkEmail(client){
   const emailCheck = await client.db(dbName).collection('registry').findOne({email:req.body.email});
 if(emailCheck.email===req.body.email){
-  
-  
 }else{
   console.log('tayken')}
 }
@@ -117,6 +106,7 @@ if(emailCheck.email===req.body.email){
 // console.log(newFile);
 //   }
 // );
+
 
 
   module.exports = router;
