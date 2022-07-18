@@ -1,3 +1,54 @@
+ 
+//multer trial////////////////////////
+// const storage = multer.diskStorage({
+//   destination:(req, photo, cb)=>{
+//     cb(null,"uploads");
+//   },
+//   filename:(req,photo,cb)=>{
+//     const {originalname} = photo;
+//     cb(null, '${uuid()}-${originalname}');
+//   }
+// });
+const upload = multer({storage});
+router.post( '/upload',upload.single('photo'), (req,res)=>{
+  console.log(photo)
+  ////////////////
+  async function gettingEmails(){
+    try {
+     await client.connect();
+     await getEmails(client);
+    }
+    catch(err){
+      console.log(err)
+    }
+    finally{
+     await client.close();
+  }}
+  //getting registered users
+  gettingEmails().catch(console.error);
+  async function getEmails(client){
+   // const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
+    const emailStr = await client.db(dbName).collection('registry').find().toArray();
+    const email = emailStr;
+    res.render('admin', {title:' You Posted an Event', email:email})
+   }
+// fs.readdir('./public/images/uploads', 'utf-8',(err,data)=>{
+//   if (err){
+//   console.log(err);
+//   }
+// const fileCount = data.length
+//  })
+// const ext = req.file.originalname.split(".")[1];
+// const newFile = "uploadImage"+fileCount+"."+ext;
+// console.log(newFile);
+// res.render('index',{title:'uploaded'})
+console.log();
+
+}
+)
+
+ 
+ 
  THIS IS AN IMAGE UPLOAD
  
  <h2 style="margin: 0;">Attach Image to Event</h2> 
