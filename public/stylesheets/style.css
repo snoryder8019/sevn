@@ -508,7 +508,6 @@ input {
   margin: 2px;
   padding: 0;
   color: black;
-  font-weight: 800;
   background-color: rgba(0, 183, 255, 0.857);
 }
 input button {
@@ -530,8 +529,25 @@ input:focus {
   background-color: rgba(235, 178, 173, 0.733);
 }
 
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    background-color: rgba(255, 0, 0, 0.674);
+  }
+  50% {
+    opacity: 50;
+    background-color: rgba(201, 235, 31, 0.733);
+  }
+  100% {
+    opacity: 100;
+    background-color: rgba(255, 0, 0, 0.674);
+  }
+}
 .delButton {
   display: none;
+  transform-style: preserve-3d;
+  animation: 0.8s ease-in-out 1 fadein;
+  background-color: rgba(255, 0, 0, 0.674);
 }
 
 .validateError {
