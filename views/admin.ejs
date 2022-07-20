@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <body>
+    <body onload="adminLoader()">
            
     <canvas id="bkgdCanvas"></canvas>  
     <div id="backgroundFX">
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
     <%- include('config/bkgdImg.ejs')%>
+
     <div class="mainStyle">
     <h1><%=title%></h1>
   <!--form action="/blogPost" method="post">
@@ -16,43 +17,58 @@
       <button type="submit">post blog</button>
   </form-->
     <h1>Registered Visitors</h1>
-<table>
-      <thead>
-     <th>name</th>
-      <th>email</th>
-       </thead>
-<tbody>
-      <% for(var i=0; i<email.length;i++){%>
-    <tr>
+ <table>
+  <h2>Registered Visitors</h2>
+    <thead>
+   <th>name</th>
+     <th>email</th>
+    </thead>
+  <tbody>
+        <% for(var i=0; i<email.length;i++){%>
+      <tr>
+      <td>
+        <form action="/visitor/<%= email[i]._id %> " method="post"><button class="delRegister" type="submit"><%= email[i].name %></button></form>
+    
+    </td>
+    <td>  
+      <button> <a href="mailto:<%=email[i].email%>">email</a></button>
+     </td>
     <td>
-    <%= email[i].name %> 
-  </td>
-  <td>
-    <%= email[i].email %>  
-  </td>
-  <td style="border:none;"><button>delete</button></td>
-</tr>
-   <% } %>
+     
+     
+      <button class="details" id="delButt<%= [i]%>">Remove</button>
+      <form method="post" action="/delRegister"><button class="delButton" id="delComfirm<%= [i]%>" name="delConfirm" value="<%= email[i].email%>">Confirm</button></form>
+    
+      </td>
 
+  </tr>
+     <% } %>
   
-</tbody>
-</table>
+    
+  </tbody>
+  </table>
         </div>
- <%- include('config/footer.ejs')%>
+
  <!--script src="javascripts/backgroundFX1.js"></script-->
-<!--div class="mainStyle">
+<div class="mainStyle">
 
 <form action="/upload"method="post" enctype="multipart/form-data">
-  <input type="file" accept="image/*" name="photo">
-  <input type="submit" >
-  <h2></h2>
-  <input type="text">
-</form-->
+ <h2>Post Event</h2>
+
+  <input placeholder="Event Title"  type="text" name="title">
+ <input placeholder="Event Subtitle" type="text" name="subtitle">
+ <textarea placeholder="Event Details" type="text" name="details"></textarea>
+ <h2 style="margin: 0;">Attach Image to Event</h2> 
+ <input type="file" accept="image/*" name="photo">
+
+  <button type="submit" >Submit</button>
+</form>
 
 
 
-
+<%- include('config/footer.ejs')%> 
 </div>
- 
+
     </div>
+    <script src="javascripts/admin.js"></script>
     </body> </html>
