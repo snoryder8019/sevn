@@ -7,6 +7,7 @@
     <%- include('config/head.ejs')%>
     <%- include('config/header.ejs')%>
     <%- include('config/bkgdImg.ejs')%>
+
     <div class="mainStyle">
     <h1><%=title%></h1>
   <!--form action="/blogPost" method="post">
@@ -15,9 +16,8 @@
       <input type="text" name="body">
       <button type="submit">post blog</button>
   </form-->
-   
-
-<table>
+    <h1>Registered Visitors</h1>
+ <table>
   <h2>Registered Visitors</h2>
     <thead>
    <th>name</th>
@@ -27,27 +27,26 @@
         <% for(var i=0; i<email.length;i++){%>
       <tr>
       <td>
-      <%= email[i].name %> 
+        <form action="/visitor/<%= email[i]._id %> " method="post"><button class="delRegister" type="submit"><%= email[i].name %></button></form>
+    
     </td>
     <td>  
-      <a href="mailto:<%=email[i].email%>">email</a>
-    </td>
-    <td style="border:none;">
-      <form method="post" action="/detail"><button class="details" id="detail<%= [i]%>" name="detail" value="<%= email[i].email%>">Details</button></form>
-      <button id="delButt<%= [i]%>">remove</button>
-     <form method="post" action="/delRegister"><button id="delComfirm<%= [i]%>" name="delConfirm" value="<%= email[i].email%>">Confirm</button></form>
+      <button> <a href="mailto:<%=email[i].email%>">email</a></button>
+     </td>
+    <td>
+     
+     
+      <button class="details" id="delButt<%= [i]%>">Remove</button>
+      <form method="post" action="/delRegister"><button class="delButton" id="delComfirm<%= [i]%>" name="delConfirm" value="<%= email[i].email%>">Confirm</button></form>
+    
       </td>
+
   </tr>
      <% } %>
   
     
   </tbody>
   </table>
-  <a href="mailto:
-  <% for(var i=0; i<email.length;i++){%>
-   <%=email[i].email%>,
-   <% } %>
-  "><p>email all</p></a>
         </div>
 
  <!--script src="javascripts/backgroundFX1.js"></script-->

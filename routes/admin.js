@@ -4,8 +4,14 @@ const { MongoClient} = require('mongodb');
 const client = require('../config/mongo');
 const alert = require('alert');
 const dbName= 'sookp';
+const cookieParser = require('cookie-parser');
+
+
 //middleware
 router.use((req,res,next)=>{
+  console.log('cookies', req.cookies)
+  console.log('signed cookies', req.signedCookies)
+
 next();
 })
 ////////////////////////////////////
@@ -27,7 +33,8 @@ router.get('/admin', (req,res) =>{
    // const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
     const emailStr = await client.db(dbName).collection('registry').find().toArray();
     const email = emailStr;
-    res.render('admin', {title:' Welcome to Admin Page', email:email})
+    console.dir(req.params)
+    res.render('admin', {title:'Admin Page', email:email})
    }
   })
 

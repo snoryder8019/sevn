@@ -12,6 +12,7 @@ const dbName= 'sookp'
 
 //middleware
 router.use((req,res,next)=>{
+ 
   next();
 //fs to read photo file length
  })
@@ -58,10 +59,11 @@ router.post('/registerUser', (req,res) => {
     await client.connect();
    // await checkEmail(client);
     await createUser(client,{
-      type:"registry",
+      type:req.body.regType,
       name: req.body.fname,
       email: req.body.email,
-      password : req.body.password
+      agree : req.body.agree,
+      message:req.body.message
     });
   }catch (err){
     console.log(err)

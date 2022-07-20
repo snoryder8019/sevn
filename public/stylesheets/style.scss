@@ -97,7 +97,13 @@ button{
    }
 }
 form{
+  margin: 0;
+  padding: 0;
 @include formButton();
+h2{
+  padding: 2%;
+  margin: 0%;
+}
 }
 //input boxes
 input{
@@ -105,8 +111,8 @@ input{
   border: 1px solid rgba(0,0,0,.9);
  min-width: 96%;
  max-height: 35px;
-margin: 2px;
-padding: 0;
+margin: 1%;
+padding: 1%;
        color: black;
     background-color: $blue;
 
@@ -134,8 +140,11 @@ input:focus{
   background-color: $red;
 
 }
+.details{width:100%}
 //form error styling
 .validateError{
+  padding: 0;
+  margin: 1%;
   color:$error;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
@@ -186,9 +195,19 @@ max-height: 50%;
 overflow-y: scroll;
 }
 td{
-  
-  border: 1px dotted black;
+  padding: 1%;
+ // border: 1px dotted black;
 }
 th{
   text-align: left;
+}
+.vDetails{
+  left:5%;
+  display: none;
+  position: fixed;
+  background-color: pink;
+  z-index: 3;
+  min-width: 90%;
+  min-height: 90%;
+ 
 }

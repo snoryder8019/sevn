@@ -495,18 +495,26 @@ button {
   margin: 0px 3px;
 }
 
+form {
+  margin: 0;
+  padding: 0;
+}
 form button {
   margin-left: 3%;
   min-width: 94%;
   max-height: 45%;
+}
+form h2 {
+  padding: 2%;
+  margin: 0%;
 }
 
 input {
   border: 1px solid rgba(0, 0, 0, 0.9);
   min-width: 96%;
   max-height: 35px;
-  margin: 2px;
-  padding: 0;
+  margin: 1%;
+  padding: 1%;
   color: black;
   background-color: rgba(0, 183, 255, 0.857);
 }
@@ -550,7 +558,13 @@ input:focus {
   background-color: rgba(255, 0, 0, 0.674);
 }
 
+.details {
+  width: 100%;
+}
+
 .validateError {
+  padding: 0;
+  margin: 1%;
   color: red;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
@@ -627,11 +641,21 @@ table {
 }
 
 td {
-  border: 1px dotted black;
+  padding: 1%;
 }
 
 th {
   text-align: left;
+}
+
+.vDetails {
+  left: 5%;
+  display: none;
+  position: fixed;
+  background-color: pink;
+  z-index: 3;
+  min-width: 90%;
+  min-height: 90%;
 }
 
 /*# sourceMappingURL=style.css.map */

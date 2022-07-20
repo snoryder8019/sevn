@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www" 
-   },
+    "start": "nodemon ./bin/www"
+  },
   "dependencies": {
     "alert": "^5.0.10",
     "cookie-parser": "^1.4.6",
