@@ -15,9 +15,10 @@
       <input type="text" name="body">
       <button type="submit">post blog</button>
   </form-->
-    <h1>Registered Visitors</h1>
- 
+   
+
 <table>
+  <h2>Registered Visitors</h2>
     <thead>
    <th>name</th>
      <th>email</th>
@@ -28,12 +29,13 @@
       <td>
       <%= email[i].name %> 
     </td>
-    <td>
-      <%= email[i].email %>  
+    <td>  
+      <a href="mailto:<%=email[i].email%>">email</a>
     </td>
     <td style="border:none;">
-      <button id="delButt<%= [i]%>">Remove <%= email[i].name%></button>
-     <form method="post" action="/delRegister"><button class="delButton" id="delComfirm<%= [i]%>" name="delConfirm" value="<%= email[i].email%>">Confirm</button></form>
+      <form method="post" action="/detail"><button class="details" id="detail<%= [i]%>" name="detail" value="<%= email[i].email%>">Details</button></form>
+      <button id="delButt<%= [i]%>">remove</button>
+     <form method="post" action="/delRegister"><button id="delComfirm<%= [i]%>" name="delConfirm" value="<%= email[i].email%>">Confirm</button></form>
       </td>
   </tr>
      <% } %>
@@ -41,6 +43,11 @@
     
   </tbody>
   </table>
+  <a href="mailto:
+  <% for(var i=0; i<email.length;i++){%>
+   <%=email[i].email%>,
+   <% } %>
+  "><p>email all</p></a>
         </div>
 
  <!--script src="javascripts/backgroundFX1.js"></script-->
