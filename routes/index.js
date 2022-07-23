@@ -14,12 +14,12 @@ router.get('/register', function(req, res, next) {
 router.get('/login', function(req, res, next) {
 res.render('login', { title: 'login' });
 });
-router.get('/visitors', function(req, res, next) {
-res.render('visitors', { title: 'visitors' });
+router.get('/visitor', function(req, res, next) {
+res.render('visitor', { title: 'visitors' });
 });
-router.get('/404', function(req, res, next) {
-res.render('404', { title: 'Daaaaang its a 404' });
-});
+// router.get('/404', function(req, res, next) {
+// res.render('404', { title: 'Daaaaang its a 404' });
+// });
 
 
 module.exports = router;

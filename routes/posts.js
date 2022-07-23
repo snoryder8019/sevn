@@ -17,41 +17,10 @@ router.use((req,res,next)=>{
 //fs to read photo file length
  })
 router.get('/', (req,res) =>{
-  res.send
+
 })
 //
-router.post('/loginU', (req,res) =>{
-  /******LOGIN ANSYNC*** */
-async function login(){
-  try {
-    await client.connect();
-   console.log('connected')
-   await checkEmail(client);
-  }
-  catch(err){
-    console.log(err)
-  }
-  finally{
-  await client.close();
-  }
-}
-/***login ASYNC END** */
-//calling the function
-login().catch(console.error);
 
-async function checkEmail(client){
-  console.log('checking email');
-  const emailCheck = await client.db(dbName).collection('registry').findOne({email:req.body.email, pass:req.body.password});
-  if(emailCheck.email===req.body.email && emailCheck.pass===req.body.pass){
-   console.log(emailCheck.email+ " email validated");
-   res.render('admin', {title:'logging IN!! ~ Welcome to Admin Page'})
-}else{
-  console.log('tayken')}
-  res.render('login', {title:'hmm Something\'s is not Straight here. Try again'})
-  client.close();
-}
-}
-)
 router.post('/registerUser', (req,res) => {
   var ipHit = req.ip;
   async function main(){

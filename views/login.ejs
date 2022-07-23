@@ -9,10 +9,10 @@
     <div class="mainStyle">
     <h1><%= title%></h1>
   <form action="/loginU" method="post">
-    <br><h2>email address</h2>
-      <input type="text" name="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="valid email characters not recognized" >
+    <br><h2>username</h2>
+      <input name="user">
       <br><h2>password</h2>
-      <input type="password" email="password">
+      <input name="loginpass"  type="password" >
       <br>
       <br>
       <button type="submit"><h2>login</h2></button>
