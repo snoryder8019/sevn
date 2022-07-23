@@ -13,3 +13,7 @@ function adminLoader(x){
 adminLoader("click");
 //adminLoader("animationend");
 //window.addEventListener("touchstart")
+
+function expander(zzy){
+    console.log(this.id)
+}

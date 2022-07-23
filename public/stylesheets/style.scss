@@ -14,12 +14,20 @@ $error:red;
   @include media.xlrg();
   }
 
-
+//***********************MAIN APP STYLES****************//
 body {
   margin: 0;
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   //background-color:white;
+}
+button{
+  min-width:92%;
+  min-height:35px;
+  margin-left: 4%;
+  border-radius: 25px;
+  border: inset 3px solid black
+
 }
 h1{
   color:$blue;
@@ -53,6 +61,13 @@ li{
   }
   a{font-size: 1.2rem;}
  }
+
+ //***********destiled DESIGNS***********//
+ .adminSection{
+  border:1px solid black;
+  margin:2%;
+  padding:2%
+ }
 #bkgdCanvas{
 z-index: -1;
   position: fixed;
@@ -83,23 +98,12 @@ img.okImg{
   transform-style: preserve-3d;
 @include media.bkgdImg();
 }
-//button styles
-button{
-  margin: 0px 3px;
-}
-//form and input button mixin
-@mixin formButton(){
-  button{
-    margin-left: 3%;
-     min-width:94%;
-     max-height:45%;
-    //min-height:65px;
-   }
-}
+
+
 form{
   margin: 0;
   padding: 0;
-@include formButton();
+
 h2{
   padding: 2%;
   margin: 0%;
@@ -107,7 +111,7 @@ h2{
 }
 //input boxes
 input{
-@include formButton();
+
   border: 1px solid rgba(0,0,0,.9);
  min-width: 96%;
  max-height: 35px;
@@ -130,17 +134,19 @@ input:focus{
 }
 @keyframes fadein{
   0%{opacity:0; background-color:$red}
-  50%{opacity:50; background-color:$yellow}
-  100%{opacity:100; background-color:$red}
+  50%{opacity:0; background-color:$red}
+  95%{opacity:50; background-color:$yellow;}
+  100%{opacity:100; background-color:$red;}
 }
 .delButton{
   display: none;
-  transform-style: preserve-3d;
-  animation: .8s ease-in-out 1 fadein;
+ //transform-style: preserve-3d;
+  animation: 2s ease-in-out 1 fadein;
   background-color: $red;
+  //transform: tranlateY(100%);
 
 }
-.details{width:100%}
+
 //form error styling
 .validateError{
   padding: 0;
@@ -151,10 +157,7 @@ input:focus{
   transform-style:preserve-3d ;
   transform: translateY(-15px);
 }
-button.trash{
-  max-width: 20px;
-  max-height: 20px;
-}
+
 //main content boxing style
 .mainStyle{
   //background-color: white;
@@ -200,6 +203,48 @@ td{
 }
 th{
   text-align: left;
+}
+.messagebox{
+  width: 100%;
+  font-size: 1em;
+}
+.details{
+  justify-content: space-evenly;
+  padding:2%;
+  display:flex;
+
+}
+.detailItem{
+  flex-grow: 2;
+  padding:2%;
+border: 1px solid black;
+}
+@keyframes spinner{
+  0%{transform: rotate(0deg) translateY(-50%) translateX(-50%);}
+  100%{transform: rotate(360deg) translateY(-50%) translateX(-50%);}
+}
+.loadContainer{
+  animation: 1.3s infinite linear spinner;
+  position: absolute;
+  transform-origin: 0 -8%;
+  transform: translateY(-50%) translateX(-50%);
+  margin-top:50vh;
+  margin-left:50vw;
+  min-height: 80px;
+  min-width: 80px;
+  background-color: rgba(255, 192, 203, 0.377);
+  border-radius: 40px;
+}
+
+.loadScreen{
+  top: 0;
+  left:0;
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index:10;
+  display: none;
+  background-color: rgba(0,0,0,.85);
 }
 .vDetails{
   left:5%;

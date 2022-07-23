@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body >
+           
+    <canvas id="bkgdCanvas"></canvas>  
+    <div id="backgroundFX">
+    <%- include('config/head.ejs')%>
+    <%- include('config/header.ejs')%>
+    <%- include('config/bkgdImg.ejs')%>
+    <%- include('config/loadScreen.ejs')%>
+
+    <div class="mainStyle">
+    <h1><%=title%></h1>
+<div class="mainStyle">
+  
+      <p>registrants name: </p><h2><%=data.name%></h2>
+   <p>email address: </p><h5><%=data.email%></h5>
+
+   <p>signed up as: </p><h2><%=data.type%></h2>
+   <div class="messagebox">
+      <p>message:<%=data.message%></p>
+    </div>
+
+
+
+
+<button class="details"> <a style="text-decoration:none;color:black" href="mailto:<%=data.email%>">email <%= data.name%> </a></button>
+<form method="post" action="/adminHit"><button class="details"> Back to Admin Page</button></form>
+<button class="details" id="delButt<%= data.email%>">Remove</button>
+<form method="post" action="/delRegister"><button class="delButton" id="delComfirm<%= data.email%>" name="delConfirm" value="<%= data.email%>">Delete Visitor</button></form>
+</div>
+</div>
+    </div>
+    <%- include('config/footer.ejs')%> 
+    <script src="javascripts/loadScreen.js"></script>
+    <script src="javascripts/visitor.js"></script>
+    </body> </html>

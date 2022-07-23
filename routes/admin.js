@@ -5,14 +5,47 @@ const client = require('../config/mongo');
 const alert = require('alert');
 const dbName= 'sookp';
 const cookieParser = require('cookie-parser');
+const fs = require('fs');
 
 
 //middleware
 router.use((req,res,next)=>{
-  console.log('cookies', req.cookies)
-  console.log('signed cookies', req.signedCookies)
-
+  ////////whitelisting ip address and will use cron to delete
+const sesh= req.ip;
+console.log(sesh)
+fs.readFile('tmp/whitelist.txt',(err,data)=>{
+if (err){
+  console.log(err)
+}
+ else if(data.indexOf(req.ip)>=0){
+    console.log('whitelisted')
+  }
+  else{
+    res.render('login',{title:"session timeout"})
+  }
+})
 next();
+})
+////////////////////////////////////
+router.post('/loginU', (req,res)=>{
+  console.log('admin root')
+  if (req.body.user===process.env.LOGIN && req.body.loginpass===process.env.LOGINPASS){
+    const whitelist = req.ip+" "+ Date.now()+", \n";
+    fs.appendFile('tmp/whitelist.txt',whitelist,(err)=>{
+      if(err){
+        console.log(err)
+      }
+      else{
+  console.log('appended to whitelist')
+      }
+    })
+  
+    console.log('password accepted')
+    res.redirect('admin')
+  }else{
+    console.log('credentials failed')
+    res.render('login',{title:"credentials failed"});
+  }
 })
 ////////////////////////////////////
 router.get('/admin', (req,res) =>{
@@ -25,40 +58,16 @@ router.get('/admin', (req,res) =>{
       console.log(err)
     }
     finally{
-     await client.close();
+    await client.close();
   }}
   //calling the function
   gettingEmails().catch(console.error);
   async function getEmails(client){
    // const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
-    const emailStr = await client.db(dbName).collection('registry').find().toArray();
-    const email = emailStr;
-    console.dir(req.params)
-    res.render('admin', {title:'Admin Page', email:email})
+    const data = await client.db(dbName).collection('registry').find().toArray();
+    res.render('admin', {title:'Admin Page', data:data})
    }
   })
 
-///////////////////////////////
-router.post('/delRegister',(req,res) =>{
-  async function getUsertoDelete(){
- try{
-    await client.connect();
-  await findThem(client);
-    }
-  catch(err){
-    console.log(err)
-  }
-  finally{
-   await client.close()
- }}
-getUsertoDelete().catch(console.error);
-  async function findThem(client) {
-    const whoGone = await client.db(dbName).collection('registry').deleteOne({"email":req.body.delConfirm})
-    const emailStr = await client.db(dbName).collection('registry').find().toArray();
-    const email =emailStr;
-     console.log();
-    res.render('admin',{title:'removed!!\n'+req.body.delConfirm, email:email})
-  }
-})
-//////////////////
+
 module.exports = router;
