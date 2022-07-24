@@ -29,6 +29,7 @@ if (err){
     res.render('login',{title:"session timeout"})
   }
 })
+next();
 })
 ////////////////////////////////////
 router.post('/loginU', (req,res)=>{
