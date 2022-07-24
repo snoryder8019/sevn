@@ -4,19 +4,33 @@ const { MongoClient} = require('mongodb');
 var client = require('../config/mongo');
 const alert = require('alert')
 const app = express();
+const dbName = 'sookp'
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home Page Content' });
+router.get('/',(req, res, next)=> {
+  async function gettingBlogs(){
+    try {
+     await client.connect();
+     await getBlogs(client);
+    }
+    catch(err){
+      console.log(err)
+    }
+    finally{
+    await client.close();
+  }}
+  //calling the function
+  gettingBlogs().catch(console.error);
+  async function getBlogs(client){
+
+   // const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
+    const data = await client.db(dbName).collection('blogs').find().toArray();
+    res.render('index', {title:'Welcome', data:data})
+   console.log(data[0])
+  }
 });
-router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'register' });
-});
-router.get('/login', function(req, res, next) {
-res.render('login', { title: 'login' });
-});
-router.get('/visitor', function(req, res, next) {
-res.render('visitor', { title: 'visitors' });
-});
+
+
+
 // router.get('/404', function(req, res, next) {
 // res.render('404', { title: 'Daaaaang its a 404' });
 // });

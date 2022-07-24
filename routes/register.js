@@ -16,11 +16,14 @@ router.use((req,res,next)=>{
   next();
 //fs to read photo file length
  })
-router.get('/', (req,res) =>{
+router.get('/', (req,res,next) =>{
 
+  next();
 })
 //
-
+router.get('/register', function(req, res, next) {
+  res.render('register', { title: 'register' });
+});
 router.post('/registerUser', (req,res) => {
   var ipHit = req.ip;
   async function main(){
