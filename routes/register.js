@@ -61,8 +61,9 @@ if(emailCheck.email===req.body.email){
         throw Error('TAYKEN');
             }else{
    const result = await client.db(dbName).collection("registry").insertOne(newUser);
+   const data = await client.db(dbName).collection("blogs").find().toArray();
    console.log(' :new user\n id: '+result.insertedId+'\n email: '+ req.body.email+'\nIP:'+ipHit );
-   res.render('index',{title:'thanks for registering! redirected Home.'})}
+   res.render('index',{title:'thanks for registering! redirected Home.', data:data})}
    }
 })
 
