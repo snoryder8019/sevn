@@ -1,4 +1,8 @@
 @media screen and (max-width:768px) {
+  .imgBox {
+    width: 100%;
+  }
+
   a {
     font-size: 1em;
   }
@@ -20,6 +24,10 @@
   }
 }
 @media screen and (min-width:769px) and (max-width:1000px) {
+  .imgBox {
+    width: 100%;
+  }
+
   li {
     font-size: 2.6em;
   }
@@ -41,6 +49,10 @@
   }
 }
 @media screen and (min-width:1001px) and (max-width:1680px) {
+  .imgBox {
+    width: 50%;
+  }
+
   li {
     font-size: 1.6em;
   }
@@ -70,6 +82,10 @@
   }
 }
 @media screen and (min-width:1681px) {
+  .imgBox {
+    width: 50%;
+  }
+
   a {
     font-size: 1.5em;
   }
@@ -109,7 +125,10 @@ button {
 }
 
 h1 {
-  color: rgba(0, 183, 255, 0.857);
+  color: #bc3374;
+}
+h1 .imgBox {
+  width: 100%;
 }
 h1 a {
   font-size: 1em;
@@ -126,6 +145,9 @@ h1 h2 {
 h1 .pricing {
   font-size: 2rem;
 }
+h1 .imgBox {
+  width: 100%;
+}
 h1 li {
   font-size: 2.6em;
 }
@@ -140,6 +162,9 @@ h1 h1 {
 }
 h1 h2 {
   font-size: 2rem;
+}
+h1 .imgBox {
+  width: 50%;
 }
 h1 li {
   font-size: 1.6em;
@@ -158,6 +183,9 @@ h1 h2 {
 }
 h1 .pricing {
   font-size: 2rem;
+}
+h1 .imgBox {
+  width: 50%;
 }
 h1 a {
   font-size: 1.5em;
@@ -175,6 +203,9 @@ h1 .pricing {
   font-size: 3rem;
 }
 
+h2 .imgBox {
+  width: 100%;
+}
 h2 a {
   font-size: 1em;
 }
@@ -190,6 +221,9 @@ h2 h2 {
 h2 .pricing {
   font-size: 2rem;
 }
+h2 .imgBox {
+  width: 100%;
+}
 h2 li {
   font-size: 2.6em;
 }
@@ -204,6 +238,9 @@ h2 h1 {
 }
 h2 h2 {
   font-size: 2rem;
+}
+h2 .imgBox {
+  width: 50%;
 }
 h2 li {
   font-size: 1.6em;
@@ -222,6 +259,9 @@ h2 h2 {
 }
 h2 .pricing {
   font-size: 2rem;
+}
+h2 .imgBox {
+  width: 50%;
 }
 h2 a {
   font-size: 1.5em;
@@ -243,6 +283,9 @@ p {
   margin: 2%;
   padding: 1%;
 }
+p .imgBox {
+  width: 100%;
+}
 p a {
   font-size: 1em;
 }
@@ -258,6 +301,9 @@ p h2 {
 p .pricing {
   font-size: 2rem;
 }
+p .imgBox {
+  width: 100%;
+}
 p li {
   font-size: 2.6em;
 }
@@ -272,6 +318,9 @@ p h1 {
 }
 p h2 {
   font-size: 2rem;
+}
+p .imgBox {
+  width: 50%;
 }
 p li {
   font-size: 1.6em;
@@ -290,6 +339,9 @@ p h2 {
 }
 p .pricing {
   font-size: 2rem;
+}
+p .imgBox {
+  width: 50%;
 }
 p a {
   font-size: 1.5em;
@@ -310,6 +362,9 @@ p .pricing {
 a {
   color: rgba(0, 183, 255, 0.857);
 }
+a .imgBox {
+  width: 100%;
+}
 a a {
   font-size: 1em;
 }
@@ -325,6 +380,9 @@ a h2 {
 a .pricing {
   font-size: 2rem;
 }
+a .imgBox {
+  width: 100%;
+}
 a li {
   font-size: 2.6em;
 }
@@ -339,6 +397,9 @@ a h1 {
 }
 a h2 {
   font-size: 2rem;
+}
+a .imgBox {
+  width: 50%;
 }
 a li {
   font-size: 1.6em;
@@ -357,6 +418,9 @@ a h2 {
 }
 a .pricing {
   font-size: 2rem;
+}
+a .imgBox {
+  width: 50%;
 }
 a a {
   font-size: 1.5em;
@@ -374,6 +438,9 @@ a .pricing {
   font-size: 3rem;
 }
 
+li .imgBox {
+  width: 100%;
+}
 li a {
   font-size: 1em;
 }
@@ -389,6 +456,9 @@ li h2 {
 li .pricing {
   font-size: 2rem;
 }
+li .imgBox {
+  width: 100%;
+}
 li li {
   font-size: 2.6em;
 }
@@ -403,6 +473,9 @@ li h1 {
 }
 li h2 {
   font-size: 2rem;
+}
+li .imgBox {
+  width: 50%;
 }
 li li {
   font-size: 1.6em;
@@ -421,6 +494,9 @@ li h2 {
 }
 li .pricing {
   font-size: 2rem;
+}
+li .imgBox {
+  width: 50%;
 }
 li a {
   font-size: 1.5em;
@@ -448,6 +524,7 @@ li .pricing {
 .footer {
   z-index: 5;
   color: rgba(201, 235, 31, 0.733);
+  background-color: black;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 .footer p {
@@ -584,8 +661,10 @@ img.mainImg {
 }
 
 .eventBody {
+  background-color: rgba(215, 224, 164, 0.581);
   border: 1px solid black;
   padding: 2%;
+  margin: 0 0 4% 0;
 }
 
 .imgBox {
@@ -593,29 +672,18 @@ img.mainImg {
   padding: 0;
   width: 100%;
 }
-@media screen and (min-width: 400px) and (-webkit-min-device-pixel-ratio: 1) {
-  .imgBox {
-    width: 80%;
-    margin: 0 10%;
-  }
-}
-@media screen and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 1) {
-  .imgBox {
-    width: 40%;
-    margin: 0 30%;
-    float: right;
-  }
-}
-@media screen and (min-width: 760px) and (-webkit-max-device-pixel-ratio: 1) {
-  .imgBox {
-    width: 20%;
-    margin: 0 40%;
-    float: right;
-  }
-}
 
 .menu {
+  position: fixed;
+  min-width: 100vw;
+  top: 0;
+  left: 0;
   display: flex;
+  background-color: black;
+}
+
+.landingPage {
+  margin-top: 17%;
 }
 
 @keyframes slidein() {

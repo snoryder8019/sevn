@@ -11,12 +11,7 @@
 
     <div class="mainStyle">
     <h1><%=title%></h1>
-  <!--form action="/blogPost" method="post">
-      <input type="text" name="blogTitle" >
-      <input type="text" name="subTitle">
-      <input type="text" name="body">
-      <button type="submit">post blog</button>
-  </form-->
+
   <div class="mainStyle">
     <h2 id="adminZero" onclick="expander(0)">Post Event or Blog Post</h2>
       <div class="adminSection" id="admin0">
@@ -41,32 +36,51 @@
  <table>
 
     <thead>
-   <th>name</th>
-     <th>email</th>
+   <th>name</th><th>email</th>
     </thead>
   <tbody>
         <% for(var i=0; i<data.length;i++){%>
       <tr>
       <td>
         <form action="/visitor"  method="post"><button class="delRegister" name="buttonID"value="<%=data[i].email%>" type="submit"><%= data[i].name %></button></form>
-    
-    </td>
+      </td>
     <td>  
       <button> <a href="mailto:<%=data[i].email%>">email</a></button>
      </td>
-    <td>
-     
-     
-      </td>
-
-  </tr>
+    </tr>
      <% } %>
-  
-    
-  </tbody>
+    </tbody>
   </table>
   </div>
   </div>
+
+  <div class="mainStyle">
+    <h2 id="adminTwo" onclick="expander(2)">Blogs</h2>
+    <div class="adminSection" id="admin2">
+<table>
+
+  <thead>
+ <th>Blog Title</th><th>Subtitle</th><th>Remove</th>
+  </thead>
+<tbody>
+      <% for(var i=0; i<blogs.length;i++){%>
+    <tr>
+    <td>
+     <%= blogs[i].bTitle %>
+    </td>
+    <td><%= blogs[i].bSubtitle%></td>
+  <td>  
+   <form action="/delBlog" method="post"><button name="blogDelete" value="<%= blogs[i]._id%>"> delete</button>
+   </form> 
+   </td>
+  </tr>
+   <% } %>
+  </tbody>
+</table>
+</div>
+</div>
+
+
         </div>
 
  <!--script src="javascripts/backgroundFX1.js"></script-->

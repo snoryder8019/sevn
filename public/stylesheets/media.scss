@@ -27,6 +27,11 @@ $aXlrg:1.5em;
 // $spanTablet:1.1em;
 // $spanDesk:1em;
 // $spanXlrg:3em;
+//image size
+$imgMobile:100%;
+$imgTablet:100%;
+$imgDesk:50%;
+$imgXlrg:50%;
 
 //paragraph size
 $pMobile:1rem;
@@ -63,6 +68,9 @@ $xlrg:"(min-width:1681px)";
 // $desk:" (max-width:980px)";
 // $xlrg:"(min-width:1881px)";
 @mixin mobile(){
+    .imgBox{
+        width:$imgMobile
+    }
     a{
         font-size:$aMobile;
     }
@@ -80,6 +88,9 @@ font-size: $h2Mobile;
     }
 }
 @mixin tablet(){
+    .imgBox{
+        width:$imgTablet
+    }
     li{
         font-size: $liTablet;
     }
@@ -98,6 +109,9 @@ font-size: $h2Tablet;
   
 }
 @mixin desk(){
+    .imgBox{
+        width:$imgDesk
+    }
     li{
         font-size: $liDesk;
     }
@@ -119,6 +133,9 @@ font-size: $h2Tablet;
         }
 }
 @mixin xlrg(){
+    .imgBox{
+        width:$imgXlrg
+    }
     a{
         font-size:$aXlrg;
     }

@@ -1,4 +1,5 @@
 @use './media.scss';
+$accent:rgba(188,51,116,1);
 $red:rgba(255, 0, 0, 0.674);
 $blue:rgba(0, 183, 255, 0.857);
 $green:rgba(30, 255, 0, 0.57);
@@ -30,7 +31,7 @@ button{
 
 }
 h1{
-  color:$blue;
+  color:$accent;
   @include mqs();
 }
 h2{
@@ -55,6 +56,7 @@ li{
 .footer{
   z-index: 5;
   color: $yellow;
+  background-color: black;
   text-shadow: 2px 2px 2px rgba(0,0,0,.4);
   p{
     font-size: 1.2rem;
@@ -169,24 +171,35 @@ input:focus{
   animation: 1.2s ease-in 1s 1 slidein;
 
 }
+
 img.mainImg{
   width:100%;
   padding: 0%;
   margin: 0%;
 }
 .eventBody{
+  background-color: rgba(215, 224, 164, 0.581);
   border:1px solid black;
   padding:2%;
+  margin:0 0 4% 0;
 }
 .imgBox{
   margin: 0;
   padding: 0;
   width: 100%;
-  @include media.mainImg;
+ 
 }
 //MENU STYLES
 .menu{
+  position: fixed;
+  min-width: 100vw;
+  top:0;
+  left: 0;
   display: flex;
+  background-color: black;
+  }
+  .landingPage{
+    margin-top: 17%;
   }
 @keyframes slidein(){
   0%{opacity:0;transform:translateX(-45px)}
