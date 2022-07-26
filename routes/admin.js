@@ -53,7 +53,7 @@ router.post('/loginU', (req,res)=>{
   }
 })
 ///////////////////////////////////
-router.get('/login', function(req, res, next) {
+router.get('/login', function(req, res) {
   res.render('login', { title: 'login' });
   });
 //////////////////////////////////
@@ -80,7 +80,7 @@ router.get('/admin', (req,res) =>{
   })
 
 ///////////////multer
- router.post('/upload',upload.single('photo'), function(req,res, next){
+ router.post('/upload',upload.single('photo'), function(req,res){
   //isolate file extention
   const imageData= req.file;
   const ogStr=0;
@@ -88,8 +88,8 @@ router.get('/admin', (req,res) =>{
   const str2 = imageData.filename;
   const strSplit= str.split('.');
   const ext = strSplit[1];
-  const oldFilepath = "/SOP/uploads/";
-  const newFilepath = "/SOP/public/images/blog/"
+  const oldFilepath = "/sevn/uploads/";
+  const newFilepath = "./sevn/public/images/blog/"
   const newName = 'blog_Image_'+ Date.now()+"."+ext;
   const bImgName = "images/blog/"+newName;
   console.log(imageData)
