@@ -10,17 +10,18 @@
     <%- include('config/loadScreen.ejs')%>
 
     <div class="mainStyle">
+      <div class="landingPage">
     <h1><%=title%></h1>
 
   <div class="mainStyle">
     <h2 id="adminZero" onclick="expander(0)">Post Event or Blog Post</h2>
-      <div class="adminSection" id="admin0">
+      <div class="eventBody" id="admin0">
 
       <form action="/upload"method="post" enctype="multipart/form-data">
       
        <h2>Step 1: Add Details</h2>
        <input placeholder="Event Title"  type="text" name="title">
-       <input placeholder="Event Subtitle" type="text" name="subtitle">
+       <input placeholder="Date or Subtitle" type="text" name="subtitle">
        <textarea placeholder="Event Details" type="text" name="details"></textarea>
        <h2 style="margin: 0;">Step 2: Attach One Image</h2> 
        <input type="file" accept="image/*" name="photo">
@@ -32,7 +33,7 @@
 
     <div class="mainStyle">
       <h2 id="adminOne" onclick="expander(1)">Registered Visitors</h2>
-      <div class="adminSection" id="admin1">
+      <div class="eventBody id="admin1">
  <table>
 
     <thead>
@@ -55,12 +56,12 @@
   </div>
 
   <div class="mainStyle">
-    <h2 id="adminTwo" onclick="expander(2)">Blogs</h2>
-    <div class="adminSection" id="admin2">
+    <h2 id="adminTwo" onclick="expander(2)">Events</h2>
+    <div class="eventBody" id="admin2">
 <table>
 
   <thead>
- <th>Blog Title</th><th>Subtitle</th><th>Remove</th>
+ <th>Blog Title</th><th>Date or Subtitle</th><th>Remove</th>
   </thead>
 <tbody>
       <% for(var i=0; i<blogs.length;i++){%>
@@ -77,6 +78,7 @@
    <% } %>
   </tbody>
 </table>
+</div>
 </div>
 </div>
 

@@ -10,15 +10,19 @@
     <%- include('config/loadScreen.ejs')%>
 
     <div class="mainStyle">
+        <div class="landingPage">
     <h1><%=title%></h1>
-<div class="mainStyle">
-  
-      <p>registrants name: </p><h2><%=data.name%></h2>
-   <p>email address: </p><h5><%=data.email%></h5>
 
-   <p>signed up as: </p><h2><%=data.type%></h2>
+<div class="mainStyle">
+  <div class="eventBody">
+      <h3>registrants name: </h3><h2><%=data.name%></h2>
+   <h3>email address: </h3><p><%=data.email%></p>
+
+   <h3>signed up as: </h3><p><%=data.type%></p>
    <div class="messagebox">
-      <p>message:<%=data.message%></p>
+      <h3>message: </h3><p><%=data.message%></p>
+
+    </div>
     </div>
 
 
@@ -28,6 +32,7 @@
 <form method="post" action="/adminHit"><button class="details"> Back to Admin Page</button></form>
 <button class="details" id="delButt<%= data.email%>">Remove</button>
 <form method="post" action="/delRegister"><button class="delButton" id="delComfirm<%= data.email%>" name="delConfirm" value="<%= data.email%>">Delete Visitor</button></form>
+</div>
 </div>
 </div>
     </div>
