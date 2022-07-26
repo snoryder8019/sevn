@@ -25,8 +25,7 @@ router.get('/',(req, res, next)=> {
    // const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
     const data = await client.db(dbName).collection('blogs').find().toArray();
     res.render('index', {title:'Welcome', data:data})
-   console.log(data[0])
-  }
+    }
 });
 
 
