@@ -8,47 +8,40 @@ const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const multer = require('multer');
 const { getEnabledCategories } = require('trace_events');
-const upload =multer({dest:"uploads/"})
+const upload =multer({dest:"uploads/"});
+const path =require('path');
 const ObjectId = require('mongodb').ObjectId;
-
-
 //////////////////middleware
 router.use((req,res,next)=>{
   ////////whitelisting ip address and will use cron to delete
 const sesh= req.ip;
-console.log(sesh)
 fs.readFile('tmp/whitelist.txt',(err,data)=>{
 if (err){
-  console.log(err)
+  console.log(err);
 }
- else if(data.indexOf(req.ip)>=0){
+ if(data.indexOf(req.ip)>=0){
     console.log('whitelisted');
-    
-  }
+   }
   else{
-    res.render('login',{title:"session timeout"})
+    res.render('login',{title:"session timeout", data:data});
   }
 })
 next();
 })
 ////////////////////////////////////
 router.post('/loginU', (req,res)=>{
-  console.log('admin root')
   if (req.body.user===process.env.LOGIN && req.body.loginpass===process.env.LOGINPASS){
-    const whitelist = req.ip+" "+ Date.now()+", \n";
+    const whitelist = req.ip+", \n";
     fs.appendFile('tmp/whitelist.txt',whitelist,(err)=>{
       if(err){
-        console.log(err)
+        console.log(err);
       }
       else{
   console.log('appended to whitelist')
       }
     })
-  
-    console.log('password accepted')
-    res.redirect('admin')
+    res.redirect('admin');
   }else{
-    console.log('credentials failed')
     res.render('login',{title:"credentials failed"});
   }
 })
@@ -64,20 +57,20 @@ router.get('/admin', (req,res) =>{
      await getEmails(client);
     }
     catch(err){
-      console.log(err)
+      console.log(err);
     }
     finally{
     await client.close();
   }}
-  //calling the function
-  gettingEmails().catch(console.error);
+ gettingEmails().catch(console.error);
+
   async function getEmails(client){
-   // const dataStr = await client.db(dbName).collection('registry').find({"type": {$in:['registry']}}).toArray();
-    const data = await client.db(dbName).collection('registry').find().toArray();
+   const data = await client.db(dbName).collection('registry').find().toArray();
    const blogs= await client.db(dbName).collection('blogs').find().toArray();
-    res.render('admin', {title:'Admin Page', data:data, blogs:blogs})
+    res.render('admin', {title:'Admin Page', data:data, blogs:blogs});
    }
   })
+
 
 ///////////////multer
  router.post('/upload',upload.single('photo'), function(req,res){
@@ -91,14 +84,15 @@ router.get('/admin', (req,res) =>{
   const oldFilepath = "/sevn/uploads/";
   const newFilepath = "/sevn/public/images/blog/"
   const newName = 'blog_Image_'+ Date.now()+"."+ext;
+
+
   const bImgName = "images/blog/"+newName;
-  console.log(imageData)
+
   fs.rename(oldFilepath+str2,newFilepath+newName,(err)=>{
 if(err){
-  console.log(err)
+  console.log(err);
 }
-    console.log('file name changed and rerouted')
-  })
+ })
   async function saveBlog(bImgName,data){
     try {
       await client.connect();
@@ -111,19 +105,17 @@ if(err){
       });
      }
      catch(err){
-       console.log(err)
+       console.log(err);
      }
      finally{
      await client.close();
    }}
-   //calling the function
-   saveBlog(bImgName).catch(console.error);
+ saveBlog(bImgName).catch(console.error);
    async function createBlog(client,newBlog){
     const result = await client.db(dbName).collection('blogs').insertOne(newBlog);
-    res.redirect('admin')
-   
+    res.redirect('admin');
     }
-     }
+   }
 )
 //////////DELETE BLOGS
 router.post('/delBlog',(req,res)=>{
@@ -133,23 +125,19 @@ router.post('/delBlog',(req,res)=>{
       await getBlog(client);  
     }
     catch(err){
-      console.log(err)
+      console.log(err);
     }
     finally{
-      await client.close()
+      await client.close();
     }
   }
   deleteBlog().catch(console.error);
   async function getBlog(client){
-    const newID =ObjectId(req.body.blogDelete)
-  const deleteIt = await client.db(dbName).collection('blogs').deleteOne({"_id":newID})
-  
-  //const results = await client.db(dbName).collection('blogs').find({"id":req.body.blogDelete}) 
+    const newID =ObjectId(req.body.blogDelete);
+  const deleteIt = await client.db(dbName).collection('blogs').deleteOne({"_id":newID});
   const data = await client.db(dbName).collection('registry').find().toArray();
-    const blogs= await client.db(dbName).collection('blogs').find().toArray();
-    console.log()
-res.redirect('admin')
-  //res.render('admin',{title:'removed!!\n'+req.body.blogDelete, data:data, blogs:blogs})
+  const blogs= await client.db(dbName).collection('blogs').find().toArray();
+  res.redirect('admin');
   }
 })
 module.exports = router;

@@ -665,6 +665,8 @@ img.mainImg {
   border: 1px solid black;
   padding: 2%;
   margin: 0 0 4% 0;
+  text-overflow: clip;
+  overflow-x: scroll;
 }
 
 .imgBox {
