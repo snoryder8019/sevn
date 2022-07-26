@@ -46,7 +46,7 @@ router.post('/loginU', (req,res)=>{
   }
 })
 ///////////////////////////////////
-router.get('/login', function(req, res, next) {
+router.get('/login', function(req, res) {
   res.render('login', { title: 'login' });
   });
 //////////////////////////////////
@@ -70,18 +70,22 @@ router.get('/admin', (req,res) =>{
     res.render('admin', {title:'Admin Page', data:data, blogs:blogs});
    }
   })
-///////////////////////multer
- router.post('/upload',upload.single('photo'), function(req,res, next){
-  ////isolate file extention
-  const imageData= req.file;//multer response
-   const str = imageData.originalname; //the uploaded file
-  const str2 = imageData.filename; //the random numbered file output
-  const ext = path.extname(str); // grabbing uploaded file ext
-    const oldFilepath = "/sevn/"+req.file.destination;
-  console.log(path.resolve(str));
-  //console.log(path.filename(str2));
-  const newFilepath = "/sevn/public/images/blog/";
-  const newName = 'blog_Image_'+ Date.now()+ext;
+
+
+///////////////multer
+ router.post('/upload',upload.single('photo'), function(req,res){
+  //isolate file extention
+  const imageData= req.file;
+  const ogStr=0;
+  const str = imageData.originalname;
+  const str2 = imageData.filename;
+  const strSplit= str.split('.');
+  const ext = strSplit[1];
+  const oldFilepath = "/sevn/uploads/";
+  const newFilepath = "./sevn/public/images/blog/"
+  const newName = 'blog_Image_'+ Date.now()+"."+ext;
+
+
   const bImgName = "images/blog/"+newName;
 
   fs.rename(oldFilepath+str2,newFilepath+newName,(err)=>{
