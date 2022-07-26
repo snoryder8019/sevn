@@ -82,7 +82,7 @@ router.get('/admin', (req,res) =>{
   const strSplit= str.split('.');
   const ext = strSplit[1];
   const oldFilepath = "/sevn/uploads/";
-  const newFilepath = "./sevn/public/images/blog/"
+  const newFilepath = "/sevn/public/images/blog/"
   const newName = 'blog_Image_'+ Date.now()+"."+ext;
 
 
