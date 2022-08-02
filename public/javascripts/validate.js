@@ -6,7 +6,6 @@ const regSubmit = document.getElementById('regSubmit');
 const regForm = [regName,regEmail,regPass,regBox];
 const regValidateError = document.getElementById('regValidateError');
 
-
 function annie1(id,opacity,transY){
     id.style.opacity=opacity;
     id.style.transform="translateY("+transY+"px)"
@@ -31,30 +30,6 @@ function validateFill(){
        )
     }
     }
-// function validateEmail(){
-  
-//         regEmail.addEventListener("input", function(){
-//          if (){
-//              console.log('its null')
-//              regValidateError.style.opacity=1;
-//              regValidateError.innerHTML="must be a valid email";
-//              regValidateError.style.transform="translateY(0px)"
-//              regSubmit.disabled=true;
-//          }else{
-//              console.log('not Null');
-//              regValidateError.style.opacity=0;
-//              regValidateError.innerHTML="*please fill out all fields";
-//              regValidateError.style.transform="translateY(-15px)"
-//              regSubmit.disabled=false;
-//              }
-//             }
-//            )
-     
-// }
-
-
-
-
 
 function validate(){
     validateFill();

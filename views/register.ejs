@@ -11,6 +11,7 @@
     <div class="mainStyle">
       <div class="landingPage"> 
     <h1><%=title%></h1>
+    <div class="eventBody">
   <form action="/registerUser" method="POST">
     <br><h2>name or alias</h2>
       <input id="regName" type="text" name="fname"  pattern=".{3,}" title="three or more charachters" >
@@ -32,6 +33,7 @@
       <textarea name="message" cols="30" rows="10"></textarea>
       <button disabled id="regSubmit" type="submit"><h2>register</h2></button>
 </form>
+</div>
 </div>
   </div>
  <%- include('config/footer.ejs')%>
