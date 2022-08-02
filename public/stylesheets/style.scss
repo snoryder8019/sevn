@@ -88,6 +88,7 @@ min-width: 100vw;
  min-height: 100vh;
  //background-image: src('./images/oklaImg.png');
 background:linear-gradient(to right,$red,$yellow, $green,$blue);
+
 }
 //background Img Style
 img.okImg{
@@ -169,7 +170,11 @@ input:focus{
   //transition-duration: 1.2s;
   //transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   animation: 1.2s ease-in 1s 1 slidein;
-
+  
+  @media screen and (min-width:700px) {
+    max-width:50%;
+    margin-left: 25%;
+  }
 }
 
 img.mainImg{

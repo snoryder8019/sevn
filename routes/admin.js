@@ -23,7 +23,7 @@ if (err){
     console.log('whitelisted');
    }
   else{
-    res.render('login',{title:"session timeout", data:data});
+    res.render('login',{title:"session timeout"});
   }
 })
 next();

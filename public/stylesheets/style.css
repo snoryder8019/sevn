@@ -653,6 +653,12 @@ input:focus {
   padding: 1%;
   animation: 1.2s ease-in 1s 1 slidein;
 }
+@media screen and (min-width: 700px) {
+  .mainStyle {
+    max-width: 50%;
+    margin-left: 25%;
+  }
+}
 
 img.mainImg {
   width: 100%;
