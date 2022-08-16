@@ -684,6 +684,7 @@ img.mainImg {
 .menu {
   position: fixed;
   min-width: 100vw;
+  max-height: 11%;
   top: 0;
   left: 0;
   display: flex;
@@ -695,8 +696,8 @@ img.mainImg {
 }
 
 .headerLogo {
-  margin: 5%;
-  max-width: 100px;
+  margin: 1%;
+  max-width: 75px;
   font-size: 2rem;
 }
 
