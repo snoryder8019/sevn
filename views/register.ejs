@@ -18,18 +18,23 @@
       <br><h2>email address</h2>
       <input id="regEmail" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="valid email characters not recognized">
       <h2>I'm interested in: </h2>
-      <select name="regType" id="">
+      <select class="dropdown" name="regType" id="">
         <option name ="vendor" value="being a vendor"><h2>being a vendor</h2></option>
         <option name ="member" value="member"><h2>being a member</h2></option>
         <option name ="mailer" value="mailer"><h2>getting event emails</h2></option>
         <option name ="feedback" value="feedback"><h2>leaving SOOK Pride a Message</h2></option>
 
       </select>
-      <p>Opt in to receive email messages Southern Oklahoma Pride</p>
-      
-      <input id="regBox" type="checkbox" name="agree"><br>
+
+      <div class="validate">
+        <p>Opt in to receive email messages Southern Oklahoma Pride</p>
+        <div class="vInput">
+          <input id="regBox" type="checkbox" name="agree"><br>
+
+        </div>
       <h2 class="validateError" id="regValidateError">*please fill out all fields and "Opt In" to register</h2>
-   <h2>Leave us a Message: </h2>
+  </div>
+      <h2>Leave us a Message: </h2>
       <textarea name="message" cols="30" rows="10"></textarea>
       <button disabled id="regSubmit" type="submit"><h2>register</h2></button>
 </form>

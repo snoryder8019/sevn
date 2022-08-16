@@ -22,7 +22,7 @@ router.get('/', (req,res,next) =>{
 })
 //
 router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'register' });
+  res.render('register', { title: 'Contact Us' });
 });
 router.post('/registerUser', (req,res) => {
   var ipHit = req.ip;

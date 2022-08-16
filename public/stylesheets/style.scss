@@ -50,7 +50,10 @@ li{
 @include mqs();
 }
 #menu{
-  a{color: rgb(255, 255, 255);}
+  a{
+    color: rgb(255, 255, 255)
+
+  }
   font-weight: 950;
 }
 .footer{
@@ -102,7 +105,13 @@ img.okImg{
 @include media.bkgdImg();
 }
 
-
+@mixin formText(){
+ 
+  color: black;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 800;
+}
 form{
   margin: 0;
   padding: 0;
@@ -113,19 +122,33 @@ h2{
 }
 }
 //input boxes
-input{
+.validate{
+  display: flex;
+  margin:1%;
+  padding: 1%;
+}
+#regBox{
+ min-width: none;
+ min-width: none;
 
+}
+.vInput{
+  margin:2%;
+  width:90px
+}
+input{
+@include formText();
   border: 1px solid rgba(0,0,0,.9);
  min-width: 96%;
- max-height: 35px;
+ min-height: 50px;
 margin: 1%;
 padding: 1%;
-       color: black;
-    background-color: $blue;
+  
 
 }
 textarea{
-  background-color: $blue;
+  @include formText();
+
   min-width:96%;
   min-height: 60px;
   margin: 1%;
@@ -134,6 +157,12 @@ textarea{
 input:focus{
   border:  3px solid rgba(255, 15, 15, 0.9);
   background-color: $pink;
+}
+.dropdown{
+  @include formText();
+  width: 96%;
+  margin:2%;
+  min-height: 50px;
 }
 @keyframes fadein{
   0%{opacity:0; background-color:$red}
@@ -152,7 +181,8 @@ input:focus{
 
 //form error styling
 .validateError{
-  padding: 0;
+  max-width: 80%;
+  padding: 2%;
   margin: 1%;
   color:$error;
   transition-duration: .2s;
@@ -207,7 +237,8 @@ img.mainImg{
   background-color: black;
   }
   .landingPage{
-    margin-top: 17%;
+    margin-top: 24%;
+ 
   }
   .headerLogo{
     margin:1%;
